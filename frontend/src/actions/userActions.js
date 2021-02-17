@@ -8,14 +8,15 @@ export const login = (email, password) => async (dispatch) => {
         });
         const config = {
             headers: {
-                'Content-Type': 'application/json'
-            }
+                'Content-Type': 'application/json',
+            },
         }
 
-        const { data } = axios.post(
+        const { data } = await axios.post(
             '/api/users/login',
             { email, password },
-            config);
+            config
+            )
 
             dispatch({
                 type: USER_LOGIN_SUCCESS,
