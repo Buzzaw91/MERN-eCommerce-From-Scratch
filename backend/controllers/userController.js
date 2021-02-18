@@ -59,7 +59,6 @@ const updateUserProfile = asyncHandler( async(req, res) => {
         if (req.body.password) {
             user.password = req.body.password
         }
-        console.log('user after: ---------------> ', user);
         const updatedUser = await user.save();
 
         res.json({
