@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Link, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Row, Col, ListGroup, Image, Card } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Message from '../components/Message';
@@ -46,7 +46,7 @@ const PlaceOrderScreen = ({ history }) => {
             totalPrice: cart.totalPrice
         }));
     }
-    
+
     return (
         <>
         <CheckoutSteps step1 step2 step3 step4 />
