@@ -12,8 +12,6 @@ const OrderScreen = ({ match }) => {
 
     const dispatch = useDispatch();
 
-    
-
     const orderDetails = useSelector(state => state.orderDetails);
     const { order, loading, error } = orderDetails;
 
@@ -26,9 +24,11 @@ const OrderScreen = ({ match }) => {
 
 
     useEffect(() => {
-        dispatch(getOrderDetails(orderId));
 
-    }, [dispatch, orderId]);
+        if (!order || order._id !== orderId) {
+            dispatch(getOrderDetails(orderId));
+        }
+    }, [dispatch, orderId, order]);
 
 
 
