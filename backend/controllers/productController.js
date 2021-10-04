@@ -90,12 +90,12 @@ const updateProduct = asyncHandler( async(req, res) => {
         const updatedProduct = await product.save();
         res.json(updatedProduct);
     } else {
-        res.status(404);
+        res.sendStatus(404);
         throw new Error('Product not found');
     }
 
 
-    res.send(201).json(product);
+    res.sendStatus(201).json(product);
 });
 
 export {
